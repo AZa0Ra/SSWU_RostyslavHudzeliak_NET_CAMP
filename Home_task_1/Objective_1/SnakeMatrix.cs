@@ -13,8 +13,8 @@ namespace Objective_1
         public SnakeMatrix()
         {
             sbyte[] temp = MatrixSize();
-            _n = temp[0];
-            _m = temp[1];
+            _m = temp[0];
+            _n = temp[1];
             MatrixStyle();
         }
 
@@ -104,6 +104,8 @@ namespace Objective_1
                 {
                     Console.WriteLine("Enter the width of the matrix");
                     temp[0] = SByte.Parse(Console.ReadLine());
+                    if (temp[0] <= 0)
+                        continue;                 
                     counter++;
                 }
                 catch (Exception)
@@ -117,6 +119,8 @@ namespace Objective_1
                 {
                     Console.WriteLine("Enter the height of the matrix");
                     temp[1] = SByte.Parse(Console.ReadLine());
+                    if (temp[1] <= 0)
+                        continue;      
                     counter++;
                 }
                 catch (Exception)

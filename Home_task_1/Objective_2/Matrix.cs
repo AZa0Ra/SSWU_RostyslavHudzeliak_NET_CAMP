@@ -16,11 +16,11 @@ namespace Objective_2
             sbyte[] temp = MatrixSize();
             _rows = temp[0];
             _cols = temp[1];
+            _array = new int[_cols, _rows];
             FillMatrix();
         }
         private void FillMatrix()                                                           // Fill matrix with random numbers
         {
-            _array = new int[_cols, _rows];
             for (int i = 0; i < _cols; i++)
             {
                 for (int j = 0; j < _rows; j++)
@@ -112,6 +112,8 @@ namespace Objective_2
                 {
                     Console.WriteLine("Enter the width of the matrix");
                     temp[0] = SByte.Parse(Console.ReadLine());
+                    if (temp[0] <= 0)
+                        continue;
                     counter++;
                 }
                 catch (Exception)
@@ -125,6 +127,8 @@ namespace Objective_2
                 {
                     Console.WriteLine("Enter the height of the matrix");
                     temp[1] = SByte.Parse(Console.ReadLine());
+                    if (temp[1] <= 0)
+                        continue;
                     counter++;
                 }
                 catch (Exception)
