@@ -27,7 +27,7 @@ namespace Objective_1
             int j = 0;
 
             while (number <= _n * _m)
-            {// Ліпшого підходу в голову не прийшло :(
+            {
                 _array[i, j] = number;
 
                 if (j == jbeg && i < _n - ifin - 1)
