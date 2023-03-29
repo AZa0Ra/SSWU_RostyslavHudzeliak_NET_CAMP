@@ -45,7 +45,7 @@ namespace Objective_2
                 }
 
             void CheckHorizont((int x, int y) start, (int dx, int dy) step, (int, int)[,] check)                // Method to check horizontal lines
-            {                      // Був би вдячним якщо поясните усно або письмово                            // In matrix
+            {                                                                                                   // In matrix
                 var (xend, yend) = start;
                 int count = 0;
                 while (xend < _array.GetLength(0) && yend < _array.GetLength(1) && _array[xend, yend] == _array[start.x, start.y])
