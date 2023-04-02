@@ -1,0 +1,1 @@
+![UML](https://github.com/AZa0Ra/SSWU_RostyslavHudzeliak_NET_CAMP/blob/main/Home_task_2/Objective_1/Home_task_3(UML).png)
