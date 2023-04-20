@@ -14,38 +14,7 @@ namespace Objective_3
         private int _quarter = 0;
         private static int _startMonth = 1;
         private static int _endMonth = 3;
-        public void ElectricityUsageTracker()
-        {
-            //Thread.CurrentThread.CurrentCulture = new CultureInfo("UK-UA");
-            using (StreamReader file = new StreamReader(filename))
-            {
-                string line = file.ReadLine();
-                string[] data = line.Split(' ');
-                _quarter = int.Parse(data[1]);
-                ReadApartmentsData();
 
-            }
-        }
-        public void OneApartament(string numberOfApartment)
-        {
-            using (StreamReader file = new StreamReader(filename))
-            {
-                string line = file.ReadLine();
-                string[] data = line.Split(' ');
-                _quarter = int.Parse(data[1]);
-                ReadApartmentsData(numberOfApartment);
-            }
-        }
-        public void Debt()
-        {
-            using (StreamReader file = new StreamReader(filename))
-            {
-                string line = file.ReadLine();
-                string[] data = line.Split(' ');
-                _quarter = int.Parse(data[1]);
-                ReadApartmentsData(moreEnergy: true);
-            }
-        }
         public void ReadApartmentsData(string numberOfApartment = null, bool checkNoUsage = false, bool moreEnergy = false)
         {
             using (StreamReader file = new StreamReader(filename))
@@ -53,7 +22,7 @@ namespace Objective_3
                 string line = file.ReadLine();
                 string[] data = line.Split(' ');
                 int numApartments = int.Parse(data[0]);
-
+                _quarter = int.Parse(data[1]);
                 double energy = 0.0;
                 for (int i = 0; i < numApartments; i++)
                 {
@@ -136,15 +105,15 @@ namespace Objective_3
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine($"Report for {GetQuarterName(_quarter)} quarter:");
             stringBuilder.AppendLine($"---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
-            stringBuilder.AppendLine($"|  №  | Address(City-Street)\t\t | Owner\t\t\t | \t " + GetQuarterName(_quarter) + "\t | Meter reading | First Quarter Month | Last Quarter Month | Need to pay | Days passed |");
+            stringBuilder.AppendLine($"|  №  | Address(City-Street)\t\t | Owner\t\t\t | Usage \t | Meter reading | First Quarter Month | Last Quarter Month | Need to pay | Days passed |");
             stringBuilder.AppendLine($"---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             foreach (var apartment in _apartments)
             {
-                stringBuilder.AppendLine($"| {apartment.Number,-3} | {apartment.Address, -32} | {apartment.Owner,-29} | {apartment.Usage(),-9:F2} kWh | " +
-                    $"{apartment.Date.ToString("dd.MM.yy"),-13} | {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(_startMonth), -19}" +
+                stringBuilder.AppendLine($"| {apartment.Number,-3} | {apartment.Address,-32} | {apartment.Owner,-29} | {apartment.Usage(),-9:F2} kWh | " +
+                    $"{apartment.Date.ToString("dd.MM.yy"),-13} | {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(_startMonth),-19}" +
                     $" | {CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(_endMonth),-18} | {apartment.Usage() * apartment.power,-9:F2} ₴" +
                     $" | {Math.Round((DateTime.Now - apartment.Date).TotalDays),-11} |");
-            }                  
+            }
             stringBuilder.AppendLine($"---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------");
             return stringBuilder.ToString();
         }

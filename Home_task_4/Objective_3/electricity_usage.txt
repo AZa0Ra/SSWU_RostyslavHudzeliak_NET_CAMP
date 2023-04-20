@@ -1,0 +1,7 @@
+6 1
+1 Andriy Volodymyrovych 112743 112810 23.01.23 Lviv-T.Shevchenko
+2 Anna Kovalenko 112747 113050 25.02.22 Lutsk-Institute
+3 Pavlo Mykhailovych 112763 112980 02.03.22 Khmelnytskyi-Risnytska
+4 Olga Oleksiuk 120241 120740 20.01.22 Khmelnytskyi-Volodymyrska
+5 Mykola Mykolaychuk 113512 113862 21.02.22 Zhytomyr-B.Hrinchenko
+6 Vasyl Vasylenko 114479 114479 07.03.22 Kharkiv-Volodymyrska

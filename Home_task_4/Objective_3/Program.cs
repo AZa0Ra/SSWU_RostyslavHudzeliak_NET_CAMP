@@ -8,14 +8,14 @@ while (true)
     {
         case "1":
             {
-                accounting.ElectricityUsageTracker();
+                accounting.ReadApartmentsData();
                 Console.WriteLine(accounting.ToString());
             } break;
         case "2":
             {
                 Console.WriteLine("Enter the apartment number: ");
                 string input = Console.ReadLine();
-                accounting.OneApartament(input);
+                accounting.ReadApartmentsData(numberOfApartment: input);
                 Console.WriteLine(accounting.ToString());
             } break;
         case "3":
@@ -25,12 +25,12 @@ while (true)
             } break;
         case "4":
             {
-                accounting.Debt();
+                accounting.ReadApartmentsData(moreEnergy: true);
                 Console.WriteLine(accounting.ToString());
             } break;
         default:
             {
-                accounting.ElectricityUsageTracker();
+                accounting.ReadApartmentsData();
                 Console.WriteLine(accounting.ToString());
             } break;
     }
