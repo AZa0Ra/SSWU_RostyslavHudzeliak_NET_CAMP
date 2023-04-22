@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Objective_2
-{
+{// Ідея добра, але не до кінця реалізована.
     internal class Store
     {
         public string Name { get; set; }
