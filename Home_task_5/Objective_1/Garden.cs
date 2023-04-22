@@ -46,6 +46,7 @@ namespace Objective_1
                 double width = maxX - minX;
                 double height = maxY - minY;
                 return 2 * (width + height);
+                // Ви знайшли периметр охоплюючого прямокутника, а треба периметр опуклого многокутника найменшої площі. Це може бути алгоритм Грекхема, Джарвіса або ін.
             }
         }
 
