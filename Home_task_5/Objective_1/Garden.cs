@@ -11,7 +11,7 @@ namespace Objective_1
         private List<Tree> _trees;
 
         public Garden(List<Tree> trees)
-        {
+        {// Має бути глибока копія.
             _trees = trees;
         }
         public double Perimeter                 // Довжина огорожі
