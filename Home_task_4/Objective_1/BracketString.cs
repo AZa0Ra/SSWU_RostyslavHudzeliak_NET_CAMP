@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace Objective_1
-{
+{// Текст зливати в одну стрічку за умовою задачі не можна було!!!
     internal class BracketString
     {
         private string _text = "";
