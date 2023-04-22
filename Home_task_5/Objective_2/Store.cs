@@ -9,12 +9,15 @@ namespace Objective_2
     internal class Store
     {
         public string Name { get; set; }
+        // порушення інкапсуляції.
+      
         public List<Department> Departments { get; set; }
         public Store(string name)
         {
             Name = name;
             Departments = new List<Department>();
         }
+        // У Вас немає можливості додати підрозділ до глибшої гілки.
         public void AddDepartment(Department department)
         {
             Departments.Add(department);
