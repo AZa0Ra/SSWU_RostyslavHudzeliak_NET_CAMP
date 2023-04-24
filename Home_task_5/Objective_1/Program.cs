@@ -1,5 +1,5 @@
 ﻿using Objective_1;
-
+//Rostyslav	Hudzeliak	@AZa0Ra		80	0	0	85	85	95	60	81
 List<Tree> trees = new List<Tree>()
             {
                 new Tree(1, 2),
