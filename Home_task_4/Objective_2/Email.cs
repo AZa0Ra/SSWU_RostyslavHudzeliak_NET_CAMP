@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace Objective_2
 {
     internal class Email
-    {
+    {// тут все добре
         private string[] _words;
         List<string> correctEmails = new List<string>();
         List<string> incorrectEmails = new List<string>();
